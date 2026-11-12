@@ -1,3 +1,17 @@
+How to Run the Program
+1. Open Remix IDE.
+2. Create a file named Bank.sol.
+3. Paste the Solidity code.
+4. Open the Solidity Compiler.
+5. Compile using Solidity 0.8.x.
+6. Open the Deploy and Run Transactions tab.
+7. Select Remix VM or connect MetaMask to Sepolia.
+8. Deploy the contract.
+9. Enter an amount in the Value field and click deposit.
+10. Click showBalance to view the balance.
+11. Enter the withdrawal amount in wei and click withdraw.
+
+
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
