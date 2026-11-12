@@ -1,0 +1,67 @@
+How to Run
+1. Open Remix IDE.
+2. Create StudentData.sol.
+3. Paste the code.
+4. Compile the contract.
+5. Deploy the contract.
+6. Call addStudent() and enter student ID, name and marks.
+7. Call getStudent(0) to retrieve the first student.
+8. Call totalStudents() to display the total number of students.
+
+
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract StudentData {
+
+    // Structure
+    struct Student {
+
+        uint256 id;
+        string name;
+        uint256 marks;
+    }
+
+    // Array of students
+    Student[] public students;
+
+    // Add student
+    function addStudent(
+        uint256 _id,
+        string memory _name,
+        uint256 _marks
+    ) public {
+
+        students.push(
+            Student(_id, _name, _marks)
+        );
+    }
+
+    // Get student details
+    function getStudent(uint256 index)
+        public
+        view
+        returns (uint256, string memory, uint256)
+    {
+
+        Student memory s = students[index];
+
+        return (s.id, s.name, s.marks);
+    }
+
+    // Total students
+    function totalStudents()
+        public
+        view
+        returns (uint256)
+    {
+
+        return students.length;
+    }
+
+    // Fallback function
+    fallback() external payable { }
+
+    // Receive function
+    receive() external payable { }
+}
